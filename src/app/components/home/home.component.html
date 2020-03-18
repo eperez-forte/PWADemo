@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row p-2">
+        <div class="col-12 text-center text-uppercase">
+            <h1>Encuestas disponibles</h1>
+        </div>
+        <div class="col-12">
+            <form #form="ngForm" [formGroup]="CurpForm">
+                <mat-form-field>
+                    <mat-label>Por favor, valida tu CURP para habilitar las encuestas.</mat-label>
+                    <input #curpInput matInput formControlName="curp" placeholder="CURP" required>
+                    <mat-error>CURP inválido.</mat-error>
+                </mat-form-field>
+                <button mat-button color="primary" type="button" (click)="validarCurp(curpInput.value)" (keyup)="validarCurp(curpInput.value)">Validar</button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12 col-md-6 p-3" *ngFor="let encuesta of encuestas">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        {{encuesta.nombre}}
+                    </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{encuesta.foto}}">
+                <mat-card-actions align="end">
+                    <button mat-button [routerLink]="['/encuesta', encuesta.id]" [disabled]="!esCurpValido || encuesta.respondida">RESPONDER</button>
+                    <!-- <button mat-button>SHARE</button> -->
+                </mat-card-actions>
+            </mat-card>
+        </div>
+        <!-- <div class="col-sm-12 col-md-6 p-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Odontología
+                    </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="https://images.unsplash.com/photo-1445527815219-ecbfec67492e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80">
+                <mat-card-actions align="end">
+                    <button mat-button>RESPONDER</button>
+                </mat-card-actions>
+            </mat-card>
+
+        </div>
+        <div class="col-sm-12 col-md-6 p-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Psicología
+                    </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="https://cdn.pixabay.com/photo/2017/08/16/14/21/psychology-2647941_960_720.jpg">
+                <mat-card-actions align="end">
+                    <button mat-button>RESPONDER</button>
+                </mat-card-actions>
+            </mat-card>
+
+
+        </div>
+        <div class="col-sm-12 col-md-6 p-3">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title>
+                        Educación sexual
+                    </mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="https://images.unsplash.com/photo-1548377465-b4596450c828?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80">
+                <mat-card-actions align="end">
+                    <button mat-button>RESPONDER</button>
+                </mat-card-actions>
+            </mat-card> -->
+
+
+        <!-- </div> -->
+    </div>
+</div>
