@@ -3,11 +3,11 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 const INMUTABLE_CACHE = 'inmutable-v1.0.0';
 
 const APP_SHELL = [
-    '/PWADemo/#/',
+    '/PWADemo/',
     'index.html',
     'app.js',
     'favicon.ico',
-    'main-es5.385bfd7b09f464478078.js',
+    'main-es2015.3663f29e7795df16b9ec.js',
     'polyfills-es2015.5b10b8fd823b6392f1fd.js',
     'runtime-es2015.c5fa8325f89fc516600b.js',
     'scripts.d915779c3c0a9004c121.js',

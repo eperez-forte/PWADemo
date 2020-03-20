@@ -8,12 +8,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule, MatCardModule, MatButtonModule, MatToolbarModule, MatRadioModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContestadasComponent } from './components/contestadas/contestadas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    EncuestaComponent
+    EncuestaComponent,
+    ContestadasComponent
   ],
   imports: [
     BrowserModule,
