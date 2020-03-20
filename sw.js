@@ -7,7 +7,7 @@ const APP_SHELL = [
     'index.html',
     'app.js',
     'favicon.ico',
-    'main-es2015.06d846def175d08fd378.js',
+    'main-es5.385bfd7b09f464478078.js',
     'polyfills-es2015.5b10b8fd823b6392f1fd.js',
     'runtime-es2015.c5fa8325f89fc516600b.js',
     'scripts.d915779c3c0a9004c121.js',
@@ -15,7 +15,8 @@ const APP_SHELL = [
 ];
 
 const APP_SHELL_INMUTABLE = [
-    //'https://kit.fontawesome.com/5118b61d12.js'
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap',
+    'https://fonts.googleapis.com/icon?family=Material+Icons'
 ];
 
 self.addEventListener('install', e => {
