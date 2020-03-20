@@ -15,7 +15,8 @@ const APP_SHELL = [
 ];
 
 const APP_SHELL_INMUTABLE = [
-    //'https://kit.fontawesome.com/5118b61d12.js'
+    'https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap',
+    'https://fonts.googleapis.com/icon?family=Material+Icons'
 ];
 
 self.addEventListener('install', e => {
