@@ -3,7 +3,7 @@ const DYNAMIC_CACHE = 'dynamic-v1';
 const INMUTABLE_CACHE = 'inmutable-v1.0.0';
 
 const APP_SHELL = [
-    '/PWADemo/',
+    '/PWADemo/#/',
     'index.html',
     'app.js',
     'favicon.ico',
