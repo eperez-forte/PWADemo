@@ -1,5 +1,5 @@
 var url = window.location.href;
-var swLocation = '/encuestados/sw.js';
+var swLocation = '/PWADemo/sw.js';
 
 if (navigator.serviceWorker) {
 

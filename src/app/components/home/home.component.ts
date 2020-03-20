@@ -24,6 +24,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerEncuestas();
+    if ( self.ServiceWorker ) {
+      console.log(self.ServiceWorkerRegistration);
+    }
   }
 
   obtenerEncuestas() {

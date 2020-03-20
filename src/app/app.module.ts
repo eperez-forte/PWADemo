@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatSliderModule, MatCardModule, MatButtonModule, MatToolbarModule, MatRadioModule, MatInputModule } from '@angular/material';
+import { MatSliderModule, MatCardModule, MatButtonModule, MatToolbarModule, MatRadioModule, MatInputModule, MatProgressSpinnerModule } from '@angular/material';
 import { EncuestaComponent } from './components/encuesta/encuesta.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -26,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatToolbarModule,
     MatRadioModule,
-    MatInputModule
+    MatInputModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { EncuestaService } from '../../services/encuesta.service';
 import { DataService } from '../../services/data.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-encuesta',
@@ -26,6 +27,7 @@ export class EncuestaComponent implements OnInit, OnDestroy {
     }
   };
   curp = null;
+  enviando = false;
 
   constructor(private route: ActivatedRoute,
     private router: Router,
@@ -67,6 +69,7 @@ export class EncuestaComponent implements OnInit, OnDestroy {
   }
 
   guardarEncuesta() {
+    this.enviando = true;
     this.respuesta.id = this.id;
 
     for (const i in this.myFormGroup.controls) {
@@ -80,14 +83,20 @@ export class EncuestaComponent implements OnInit, OnDestroy {
       if (navigator.onLine) {
         this.database.postOnline(new Date().toISOString(), this.respuesta).then((result) => {
           console.log(result);
+          this.confirmarOnline();
         }).catch((err) => {
           console.log(err);
+          this.enviando = false;
         });
       } else {
+        debugger
         this.database.postOffline(new Date().toISOString(), this.respuesta).then((result) => {
           console.log(result);
+          this.confirmarOffline();
+          
         }).catch((err) => {
           console.log(err);
+          this.enviando = false;
         });
       }
       
@@ -99,6 +108,28 @@ export class EncuestaComponent implements OnInit, OnDestroy {
     }
 
     
+  }
+
+  confirmarOnline() {
+    Swal.fire({
+      title: 'Guardado',
+      text: 'Tu encuesta ha sido almacenada con éxito.',
+      icon: 'success',
+      confirmButtonText: 'Ok'
+    });
+    this.router.navigate(['/home']);
+    this.enviando = false;
+  }
+
+  confirmarOffline() {
+    Swal.fire({
+      title: 'Guardado sin internet',
+      text: 'Tu encuesta ha sido almacenada y será enviada cuando recuperes conexión a internet.',
+      icon: 'success',
+      confirmButtonText: 'Ok'
+    });
+    this.router.navigate(['/home']);
+    this.enviando = false;
   }
 
   ngOnDestroy() {

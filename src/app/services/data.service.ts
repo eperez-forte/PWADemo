@@ -95,7 +95,9 @@ export class DataService {
 
   public postOffline(id: string, document: any) {
     document._id = id;
-    return this.dbOffline.put(document);
+    return this.dbOffline.put(document).then(result => {
+      
+    });
   }
 
   public putOffline(id: string, document: any) {
